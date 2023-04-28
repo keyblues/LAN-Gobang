@@ -1,0 +1,2 @@
+# pybackgammon
+五子棋局域网对战游戏，使用python编写。内涵打包好的linux和windows可执行文件

@@ -2,6 +2,10 @@
 
 五子棋局域网对战游戏，使用python编写。
 
+## 效果
+
+![这是图片](./data/server.png "Magic Gardens")
+
 ## 下载方式
 
 可执行文件：

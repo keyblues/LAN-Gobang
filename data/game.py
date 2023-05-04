@@ -106,7 +106,7 @@ def find_pos(x, y):  # 找到显示的可以落子的位置
             L2 = i + 22
             R1 = j - 22
             R2 = j + 22
-            if x >= L1 and x <= L2 and y >= R1 and y <= R2:
+            if L1 <= x <= L2 and R1 <= y <= R2:
                 return i, j
     return x, y
 

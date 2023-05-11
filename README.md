@@ -1,4 +1,4 @@
-# pybackgammon
+# LAN-Gobang
 
 五子棋局域网对战游戏，使用python编写。
 
@@ -15,9 +15,18 @@ https://github.com/liujiakang199/pybackgammon/releases
 
 ## 游玩方法
 
-源代码版本需要安装相应的包
+源代码版本使用前需要安装相应的包
 
 ```pip install -r package.txt```
+
+client端开启前，需要更改config/config.json文件
+
+```  
+"client": {
+    "ip": "server端ip",
+    "port": 8888
+  }
+ ```
 
 **注意**：必须先打开server端等待连接才能打开client端，出现棋盘即为连接成功
 

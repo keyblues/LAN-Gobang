@@ -11,26 +11,15 @@
 可执行文件：
 https://github.com/liujiakang199/pybackgammon/releases
 
-源代码可直接clone使用，体积更小
+源代码可clone使用，体积更小
 
 ## 游玩方法
 
-源代码版本使用前需要安装相应的包
+源代码版本使用前请安装相应的包
 
-```pip install -r package.txt```
+```pip install -r requirements.txt```
 
-client端开启前，需要更改config/config.json文件
-
-```  
-"client": {
-    "ip": "server端ip",
-    "port": 8888
-  }
- ```
-
-**注意**：必须先打开server端等待连接才能打开client端，出现棋盘即为连接成功
-
-不正确的退出会导致端口占用，更改两端的config.json文件端口即可
+船新版本，两端合并，用同一个客户端就可以实现两端联机
 
 本游戏可跨平台对战，例如linux端可和windows端对战
 

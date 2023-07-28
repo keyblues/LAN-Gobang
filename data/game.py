@@ -6,11 +6,10 @@ import time
 import numpy as np
 import pygame
 
-# 初始化pygame
 pygame.init()
 # 获取对显示系统的访问，并创建一个窗口screen
-# 窗口大小为670x670
-screen = pygame.display.set_mode((670, 670))
+screen = pygame.display.set_mode((800, 480))
+
 screen_color = [238, 154, 73]  # 设置画布颜色,[238,154,73]对应为棕黄色
 line_color = [0, 0, 0]  # 设置线条颜色，[0,0,0]对应黑色
 
@@ -137,12 +136,12 @@ def win():
     if res[0] != 0:
         for pos in res[1]:
             pygame.draw.rect(screen, [238, 48, 167], [pos[0] * 44 + 27 - 22, pos[1] * 44 + 27 - 22, 44, 44], 2, 1)
-        pygame.display.update()  # 刷新显示
+        pygame.display.flip()  # 刷新显示
         return True  # 游戏结束，停止下面的操作
     return False
 
 
-def de1():
+def fix():
     screen.fill(screen_color)  # 清屏
     for i in range(27, 670, 44):
         # 先画竖线
@@ -162,15 +161,12 @@ def de1():
     for val in over_pos:  # 显示所有落下的棋子
         pygame.draw.circle(screen, val[1], val[0], 20, 0)
 
-    pygame.display.update()
 
-
-def de2():
+def position_state():
     global flag, tim, over_pos
     x, y = pygame.mouse.get_pos()
-
     x, y = find_pos(x, y)
-    if check_over_pos(x, y, over_pos):  # 判断是否可以落子，再显示
+    if check_over_pos(x, y, over_pos) and x < 670:  # 判断是否可以落子，再显示
         pygame.draw.rect(screen, [0, 229, 238], [x - 22, y - 22, 44, 44], 2, 1)
 
     keys_pressed = pygame.mouse.get_pressed()  # 获取鼠标按键信息
@@ -192,13 +188,18 @@ def get_over():
     return over_pos
 
 
+def restart():
+    global over_pos
+    over_pos = []
+
+
 if __name__ == '__main__':
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
-        de1()
+        fix()
         win()
-        de2()
+        position_state()
         print(over_pos)
         pygame.display.update()

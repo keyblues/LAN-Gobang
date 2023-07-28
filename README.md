@@ -9,7 +9,7 @@
 ## 下载方式
 
 可执行文件：
-https://github.com/liujiakang199/pybackgammon/releases
+https://github.com/keyblues/LAN-Gobang/releases
 
 源代码可clone使用，体积更小
 

@@ -1,4 +1,3 @@
-import json
 import os
 import sys
 import threading
@@ -7,9 +6,6 @@ import tkinter
 import pygame.freetype
 
 from data import game, network
-
-config = dict(json.load(open('config/config.json', 'r')))
-print(config)
 
 pygame.init()
 game_socket = network.GameSocket()
@@ -75,9 +71,10 @@ dir_path = os.path.split(os.path.realpath(__file__))[0]
 # 设置字体
 font = pygame.font.Font(dir_path + '/data/yahei.ttf', 30)
 
-# 加载首页图片
+# 加载图片
+icon = pygame.image.load(dir_path + '/data/log.ico')
 bg = pygame.image.load(dir_path + '/data/Gobang800x480.png')
-
+pygame.display.set_icon(icon)  # 设置图标
 # 显示字
 text = font.render("F1-连接  F2-等待连接", True, (255, 255, 255))
 text_reset = font.render("F3-重置", True, (255, 255, 255))
